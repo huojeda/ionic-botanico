@@ -1,0 +1,51 @@
+<ion-app>
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar >
+        <ion-title>Menú</ion-title>
+
+        <!-- Botón en la esquina derecha para cerrar el menú -->
+        <ion-buttons slot="end">
+          <ion-button (click)="closeMenu()">
+            <ion-icon name="close-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="true">
+          <ion-item button (click)="navegar('/home')">Inicio</ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="true">
+          <ion-item button (click)="navegar('/login')">Login</ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="true">
+          <ion-item button (click)="navegar('/perfil')">Mi Perfil</ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="true">
+          <ion-item button (click)="navegar('/aportes-detallados')">Mis Donaciones</ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="true">
+          <ion-item button (click)="navegar('/ubicacion')">Ubicación</ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="true">
+          <ion-item button (click)="navegar('/contacto')">Contacto</ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="true">
+          <ion-item button (click)="cerrarSesion()">Cerrar sesión</ion-item>
+        </ion-menu-toggle>
+        
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-app>

@@ -1,0 +1,17 @@
+<ion-header [translucent]="true" class="ion-text-center">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title size="large" class="ion-padding">Iniciar Sesion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- 👇 Escuchamos el evento "loginExitoso" -->
+  <app-login-form 
+    class="ion-padding" 
+    (loginExitoso)="procesarLogin($event)">
+
+  </app-login-form>
+</ion-content>

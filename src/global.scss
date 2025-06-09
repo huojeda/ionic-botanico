@@ -1,0 +1,77 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+html, body, ion-app {
+  height: 100%;
+  background-color: #f0f0f0; /* tu color */
+}
+
+ion-content {
+  --background: transparent; /* o el mismo color #f0f0f0 */
+}
+
+//fondo fuera del menu
+ion-menu {
+  background-color: #74da70;
+}
+
+
+
+ion-menu ion-content {
+  background-color: #74da70;
+}
+
+ion-app {
+  background-color: #74da70; /* Poné el color que quieras */
+}
+
+ion-menu ion-item[button] {
+  --background: transparent !important; /* Fondo transparente para dejar ver el fondo del menú */
+  color: #333 !important;                /* Texto oscuro */
+  --ripple-color: #09f709 !important;      /* Color del efecto ripple al tocar */
+}
+
+ion-menu ion-item[button]:hover {
+  background: #06f12d !important;       /* Fondo al pasar el mouse */
+}
+
+ion-menu ion-toolbar {
+  --background: #0b4e09; /* color de fondo */
+  color: #f5f0f0;         /* color por defecto para texto e iconos dentro */
+}
+
