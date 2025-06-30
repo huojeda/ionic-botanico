@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Demostración de Geolocalización y Consultas a API</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  
+  <ion-button expand="block" (click)="obtenerUbicacion()">
+    Obtener ubicación
+  </ion-button>
+
+  <ion-text *ngIf="ubicacion">
+    <p class="ion-padding-top">📍 {{ ubicacion }}</p>
+  </ion-text>
+
+  <ion-button expand="block" (click)="tomarFoto()">
+    Tomar foto
+  </ion-button>
+
+  <ion-img *ngIf="imagen" [src]="imagen" class="ion-margin-top" style="max-width: 100%; height: auto;"></ion-img>
+
+
+  <h2>📌 Posts de JSONPlaceholder</h2>
+  <ion-list>
+    <ion-item *ngFor="let post of posts">
+      <ion-label>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.body }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <h2 class="ion-margin-top">🍽️ Categorías de comida (MealDB)</h2>
+  <ion-list>
+    <ion-item *ngFor="let cat of categories">
+      <ion-thumbnail slot="start">
+        <img [src]="cat.strCategoryThumb" alt="Imagen" />
+      </ion-thumbnail>
+      <ion-label>
+        <h3>{{ cat.strCategory }}</h3>
+        <p>{{ cat.strCategoryDescription | slice:0:100 }}...</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

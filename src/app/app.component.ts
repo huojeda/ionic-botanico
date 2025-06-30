@@ -3,6 +3,8 @@ import { MenuController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { SessionService } from './session.service';
 import { NavController } from '@ionic/angular';
+import { SqliteService } from './services/sqlite.service';
+
 
 @Component({
   selector: 'app-root',
@@ -15,8 +17,13 @@ export class AppComponent {
     private menuCtrl: MenuController,
     private router: Router,
     private sessionService: SessionService,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private sqliteService: SqliteService
   ) {}
+
+  ngOnInit() {
+    this.sqliteService.initDB();
+  }
 
   async navegar(ruta: string) {
     await this.menuCtrl.close();

@@ -56,6 +56,26 @@
     </ion-button>
   </form>
 
+<ion-list *ngIf="contactosGuardados.length > 0">
+  <ion-list-header>
+    <ion-label>Contactos guardados</ion-label>
+  </ion-list-header>
+
+  <ion-item *ngFor="let c of contactosGuardados">
+    <ion-label>
+      <h2>{{ c.nombre }}</h2>
+      <p>Email: {{ c.email }}</p>
+      <p>Teléfono: {{ c.telefono }}</p>
+      <p>{{ c.mensaje }}</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-button expand="block" color="danger" (click)="borrarContactos()">
+    Borrar todos los contactos
+  </ion-button>
+</ion-list>
+
+
   <div class="ion-text-center ion-padding-top">
     <ion-button (click)="volverAlHome()" color="primary" fill="outline">
       <ion-icon name="arrow-back-outline" slot="start"></ion-icon>

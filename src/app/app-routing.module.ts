@@ -31,6 +31,14 @@ const routes: Routes = [
     path: 'perfil',
     loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   },
+  {
+    path: 'api-demo',
+    loadChildren: () => import('./api-demo/api-demo.module').then( m => m.ApiDemoPageModule)
+  },
+  {
+    path: 'nuevas-donaciones',
+    loadChildren: () => import('./nuevas-donaciones/nuevas-donaciones.module').then( m => m.NuevasDonacionesPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,63 @@
+<ion-header [translucent]="true" class="ion-text-center">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title size="large" class="ion-padding">Nuevas Donaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="guardarDonacion()">
+    <ion-item>
+      <ion-label position="floating">Nombre común</ion-label>
+      <ion-input [(ngModel)]="planta.nombrecomun" name="nombrecomun" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nombre científico</ion-label>
+      <ion-input [(ngModel)]="planta.nombrecientifico" name="nombrecientifico" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Tipo</ion-label>
+      <ion-input [(ngModel)]="planta.tipo" name="tipo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Características</ion-label>
+      <ion-textarea [(ngModel)]="planta.caracteristicas" name="caracteristicas"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Uso</ion-label>
+      <ion-input [(ngModel)]="planta.uso" name="uso"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="tomarFoto()" type="button">Tomar Foto</ion-button>
+
+    <img *ngIf="planta.foto" [src]="planta.foto" style="margin-top: 10px; width: 100%; max-height: 200px;" />
+
+    <ion-button expand="block" type="submit" color="primary">Guardar Donación</ion-button>
+  </form>
+
+  <ion-list *ngIf="donacionesGuardadas.length > 0">
+    <ion-list-header>
+      <ion-label><h2>Donaciones en Proceso</h2></ion-label>
+    </ion-list-header>
+
+    <ion-item *ngFor="let don of donacionesGuardadas">
+      <ion-thumbnail slot="start">
+        <img [src]="don.foto" *ngIf="don.foto">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ don.nombrecomun }}</h2>
+        <p>{{ don.nombrecientifico }}</p>
+        <p>{{ don.tipo }}</p>
+        <p>{{ don.caracteristicas }}</p>
+        <p>{{ don.uso }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
